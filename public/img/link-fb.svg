@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="237" height="52" viewBox="0 0 237 52">
+    <defs>
+        <rect id="a" width="230" height="41" rx="20.5"/>
+        <filter id="b" width="106.1%" height="134.1%" x="-3%" y="-17.1%" filterUnits="objectBoundingBox">
+            <feGaussianBlur in="SourceAlpha" result="shadowBlurInner1" stdDeviation="6"/>
+            <feOffset dy="1" in="shadowBlurInner1" result="shadowOffsetInner1"/>
+            <feComposite in="shadowOffsetInner1" in2="SourceAlpha" k2="-1" k3="1" operator="arithmetic" result="shadowInnerInner1"/>
+            <feColorMatrix in="shadowInnerInner1" values="0 0 0 0 0.597281408 0 0 0 0 0.877501868 0 0 0 0 1 0 0 0 0.5 0"/>
+        </filter>
+        <filter id="c" width="134.3%" height="134.3%" x="-17.2%" y="-17.2%" filterUnits="objectBoundingBox">
+            <feGaussianBlur in="SourceGraphic" stdDeviation="1.622"/>
+        </filter>
+        <circle id="d" cx="20" cy="20" r="20"/>
+        <filter id="e" width="256.9%" height="256.9%" x="-78.4%" y="-78.4%" filterUnits="objectBoundingBox">
+            <feGaussianBlur in="SourceGraphic" stdDeviation="7.059"/>
+        </filter>
+        <filter id="g" width="256.9%" height="256.9%" x="-78.4%" y="-78.4%" filterUnits="objectBoundingBox">
+            <feGaussianBlur in="SourceGraphic" stdDeviation="7.059"/>
+        </filter>
+    </defs>
+    <g fill="none" fill-rule="evenodd" transform="translate(6 6)">
+        <use fill="#FFF" fill-opacity="0" xlink:href="#a"/>
+        <use fill="#000" filter="url(#b)" xlink:href="#a"/>
+        <use stroke="#83C2FF" xlink:href="#a"/>
+        <circle cx="20" cy="20" r="21" stroke="#83C2FF" stroke-width="2" filter="url(#c)" opacity=".634"/>
+        <g>
+            <mask id="f" fill="#fff">
+                <use xlink:href="#d"/>
+            </mask>
+            <circle cx="20" cy="20" r="20.5" stroke="#83C2FF"/>
+            <circle cx="23.5" cy=".5" r="13.5" fill="#A9D1FF" filter="url(#e)" mask="url(#f)"/>
+            <circle cx="20.5" cy="44.5" r="13.5" fill="#FFA9F6" filter="url(#g)" mask="url(#f)"/>
+            <circle cx="7" cy="7" r="20" fill="#FFF" mask="url(#f)" opacity=".151"/>
+        </g>
+        <path fill="#FFF" d="M25.512 8.005L22.393 8c-3.503 0-5.768 2.319-5.768 5.907v2.723H13.49a.49.49 0 0 0-.49.489v3.947c0 .269.22.488.49.488h3.135v9.957c0 .27.22.489.491.489h4.09a.49.49 0 0 0 .49-.489v-9.957h3.666a.49.49 0 0 0 .49-.488l.003-3.947a.494.494 0 0 0-.491-.489h-3.667v-2.309c0-1.11.265-1.673 1.712-1.673h2.101a.49.49 0 0 0 .49-.49V8.495a.49.49 0 0 0-.488-.49z"/>
+    </g>
+</svg>

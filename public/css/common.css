@@ -1,0 +1,88 @@
+/*----------------------------------------BASE----------------------------------------*/
+html {
+  font-family: 'Nunito', sans-serif;
+  font-size: 62.5%
+}
+
+body {
+  background-color: #151d47;
+}
+/*----------------------------------------HEADER----------------------------------------*/
+#header {
+  background-image: url(/img/bg-header.png);
+  background-position: center -7px;
+  background-size: auto 210px;
+  background-repeat: repeat-x;
+  height: 210px;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  text-align: center;
+}
+
+#header .logo {
+  position: relative;
+  display: inline-block;
+  margin-top: 13px;
+}
+
+#header .logo img{
+  width: 83px;
+}
+
+#header .logo:before,
+#header .logo:after {
+  content: "";
+  display: block;
+  background-image: url(/img/decor-line.svg);
+  background-size: 100%;
+  width: 85px;
+  height: 15px;
+  position: absolute;
+  top: 13px;
+}
+
+#header .logo:before {
+  transform: rotate(180deg);
+  left: -105px;
+}
+
+#header .logo:after {
+  right: -105px;
+}
+
+@media all and (min-width: 1024px) {
+  #header {
+    background-position: center 0;
+    background-size: auto;
+    height: 210px;
+  }
+
+  #header .logo img{
+    width: 111px;
+  }
+
+  #header .logo {
+    position: relative;
+    display: inline-block;
+    margin-top: 6px;
+  }
+
+  #header .logo:before,
+  #header .logo:after {
+    background-size: 100%;
+    width: 121px;
+    height: 21px;
+    top: 22px;
+  }
+
+  #header .logo:before {
+    left: -134px;
+  }
+
+  #header .logo:after {
+    right: -134px;
+  }
+}
+
+/*----------------------------------------FOOTER----------------------------------------*/
