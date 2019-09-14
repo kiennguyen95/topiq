@@ -1,0 +1,48 @@
+.profile-wrapper .user-info {
+  background-image: url(/img/bg-top-sp@3x.png);
+  background-size: cover;
+  padding-top: 11em;
+}
+
+.profile-wrapper .user-info:after {
+  content: "";
+  display: block;
+  border-top: 2px solid;
+  border-image-source: linear-gradient(to left, #151d47, #6578c3 52%, #151d47);
+  border-image-slice: 1;
+}
+
+.profile-wrapper .user-info .avatar {
+  margin: 0 auto;
+  background-image: url(/img/frame-avatar.svg);
+  background-size: cover;
+  width: 11rem;
+  height: 11rem;
+}
+
+.profile-wrapper .user-info .name {
+  margin: 5px auto 0;
+  font-size: 1.5rem;
+  text-align: center;
+}
+
+.profile-wrapper .user-info .account-balance {
+  background-image: url(/img/frame-balance.png);
+  background-size: 576px auto;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 10rem;
+  text-align: center;
+  padding: 3.3rem 0;
+  margin-bottom: 0.8rem;
+}
+
+.profile-wrapper .user-info .account-balance .value {
+  font-size: 2.2rem;
+}
+
+.profile-wrapper .user-info .account-balance .label {
+  font-size: 1.15rem;
+  color: #69f3fb;
+  margin-top: 0.2rem;
+}

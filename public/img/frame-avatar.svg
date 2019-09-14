@@ -1,0 +1,21 @@
+<svg width="152" height="158" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <defs>
+        <filter filterUnits="objectBoundingBox" y="-10.7%" x="-10.7%" height="121.3%" width="121.3%" id="a">
+            <feGaussianBlur stdDeviation="5.14"/>
+        </filter>
+        <path d="m62,0l62,62l-62,62l-62,-62l62,-62z" id="b"/>
+    </defs>
+    <g>
+        <title>background</title>
+        <rect fill="none" id="canvas_background" height="402" width="582" y="-1" x="-1"/>
+    </g>
+    <g>
+        <title>Layer 1</title>
+        <g stroke="null" id="svg_1" fill-rule="evenodd" fill="none">
+            <path stroke="#51ACFF" id="svg_2" d="m76.536587,6l77,77l-77,77l-77,-77l77,-77z" stroke-width="2" stroke-dasharray="63"/>
+            <path stroke="#51ACFF" id="svg_3" filter="url(#a)" d="m76.536587,6l77,77l-77,77l-77,-77l77,-77z" stroke-width="2" stroke-dasharray="61"/>
+            <path stroke="null" id="svg_4" opacity="0.323" d="m76.036587,13l69.5,69.5l-69.5,69.5l-69.5,-69.5l69.5,-69.5z" fill="#6872A5"/>
+            <use stroke="null" id="svg_5" x="13.536587" y="20" xlink:href="#b" fill="#D8D8D8"/>
+        </g>
+    </g>
+</svg>
