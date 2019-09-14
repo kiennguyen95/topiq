@@ -88,3 +88,47 @@ body {
 }
 
 /*----------------------------------------FOOTER----------------------------------------*/
+#footer {
+  background-image: url(/img/bg-footer-sp.svg);
+  background-repeat: no-repeat;
+  background-size: 100%;
+  background-position: 0 100%;
+}
+
+#footer ul.links-wrapper {
+  margin-top: 35px;
+}
+
+#footer ul.links-wrapper li {
+  background-position-x: -2px;
+  width: 238px;
+  margin: 0 auto;
+  height: 53px;
+  line-height: 53px;
+  padding-left: 36px;
+  font-size: 14px;
+  margin-bottom: 18px;
+  text-align: center;
+}
+
+#footer ul.links-wrapper li.link-fb {
+  background-image: url(/img/link-fb.svg);
+}
+
+#footer ul.links-wrapper li.link-ios {
+  background-image: url(/img/link-ios.svg);
+}
+
+#footer ul.links-wrapper li.link-android {
+  background-image: url(/img/link-android.svg);
+}
+
+#footer ul.links-wrapper li.link-hotline {
+  background-image: url(/img/link-hotline.svg);
+}
+
+#footer .copyright {
+  text-align: center;
+  font-size: 14px;
+  padding: 18px 0 35px;
+}

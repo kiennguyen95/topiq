@@ -2,6 +2,7 @@
 
 @section('style')
   @parent
+  <link rel="stylesheet" type="text/css" href="/css/lib/owl.carousel.min.css">
   <link rel="stylesheet" type="text/css" href="/css/profile.css">
 @endsection
 @section('content')
@@ -15,12 +16,12 @@
       </div>
     </div>
 
-    <div class="games-statistics owl-carousel">
+    <div class="games-statistics owl-carousel owl-theme">
       @foreach ($user->games as $game)
         <div class="game-achievements">
           <div class="game-icon"><img src="{{ $game->icon_src }}" alt="{{ $game->icon_alt }}"></div>
           <div class="info">
-            <ul>
+            <ul class="game-results">
               <li>
                 <span>{{ $game->name }}</span>
                 <span>Hạng {{ $game->rank }}</span>
@@ -61,6 +62,6 @@
 @endsection
 @section('script')
   @parent
-  <script src="/js/owl.carousel.min.js"></script>
+  <script src="/js/lib/owl.carousel.min.js"></script>
   <script src="/js/profile.js"></script>
 @endsection

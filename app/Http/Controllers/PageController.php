@@ -21,7 +21,7 @@ class PageController extends Controller
       'games' => [
         [
           'name' => 'TOPIQ',
-          'icon_src' => '/themes/custom/topiq/images/game.png',
+          'icon_src' => '/img/game.png',
           'icon_alt' => 'topiq',
           'rank' => '1',
           'elo' => '1234',
@@ -34,7 +34,7 @@ class PageController extends Controller
         ],
         [
           'name' => 'CỜ CARO',
-          'icon_src' => '/themes/custom/topiq/images/game.png',
+          'icon_src' => '/img/game.png',
           'icon_alt' => 'ca-ro',
           'rank' => '2',
           'elo' => '43345',
@@ -47,7 +47,7 @@ class PageController extends Controller
         ],
         [
           'name' => 'ĐA SỐ THIỂU SỐ',
-          'icon_src' => '/themes/custom/topiq/images/game.png',
+          'icon_src' => '/img/game.png',
           'icon_alt' => 'da-so-thieu-so',
           'rank' => '3',
           'elo' => '6236',
