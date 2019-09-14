@@ -1,6 +1,7 @@
 @extends('layouts.master')
 
 @section('style')
+  @parent
   <link rel="stylesheet" type="text/css" href="/css/profile.css">
 @endsection
 @section('content')
@@ -59,5 +60,7 @@
   </div>
 @endsection
 @section('script')
-  <script src="/js/profile.js">
+  @parent
+  <script src="/js/owl.carousel.min.js"></script>
+  <script src="/js/profile.js"></script>
 @endsection
