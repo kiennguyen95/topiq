@@ -177,3 +177,135 @@
   width: 22px;
   height: 22px;
 }
+
+@media all and (min-width: 1024px) {
+  .profile-wrapper .user-info {
+    background-image: url(/img/bg-top.png);
+    background-position: center 0;
+    padding-top: 134px;
+    height: 780px;
+  }
+
+  .profile-wrapper .user-info:after {
+    display: none;
+  }
+
+  .profile-wrapper .user-info .avatar {
+    width: 155px;
+    height: 155px;
+  }
+
+  .profile-wrapper .user-info .name {
+    font-size: 16px;
+    margin-top: 10px;
+  }
+
+  .profile-wrapper .user-info .account-balance {
+    background-size: auto;
+    height: 150px;
+    padding: 53px 0;
+  }
+
+  .profile-wrapper .user-info .account-balance .value {
+    font-size: 30px;
+  }
+
+  .profile-wrapper .user-info .account-balance .label {
+    font-size: 16px;
+  }
+
+  .profile-wrapper .games-statistics {
+    margin: -310px auto 0;
+    background-image: url(/img/bg-content.png);
+    background-size: 100%;
+    max-width: 1250px;
+    height: 400px;
+    padding: 20px 125px;
+  }
+
+  .profile-wrapper .games-statistics .game-icon {
+    float: left;
+    width: 46%;
+  }
+
+  .profile-wrapper .games-statistics .game-icon img {
+    width: 100%;
+  }
+
+  .profile-wrapper .games-statistics .info {
+    margin-top: 110px;
+    float: left;
+    width: 54%;
+    padding-left: 35px;
+  }
+
+  .profile-wrapper .games-statistics .info ul.game-results {
+    max-width: 100%;
+    margin: 0;
+  }
+
+  .profile-wrapper .games-statistics .info ul.game-results li span {
+    font-size: 16px;
+    line-height: 40px;
+  }
+
+  .profile-wrapper .games-statistics .info ul.game-results li:first-child span {
+    font-size: 26px;
+  }
+
+  .profile-wrapper .games-statistics .info ul.game-results li {
+    height: 40px;
+    padding-left: 12px;
+  }
+
+  .profile-wrapper .games-statistics .owl-nav button.owl-prev {
+    left: 60px;
+  }
+
+  .profile-wrapper .games-statistics .owl-nav button.owl-next {
+    right: 60px;
+  }
+
+  .profile-wrapper .games-statistics .owl-nav button {
+    top: 53%;
+  }
+
+  .profile-wrapper .games-statistics .info ul.medal-list {
+    padding-left: 15px;
+    text-align: left;
+    margin-top: 28px;
+  }
+
+  .profile-wrapper .games-statistics .info ul.medal-list li.medal-gold span:before {
+    width: 29px;
+  }
+
+  .profile-wrapper .games-statistics .info ul.medal-list li.medal-silver span:before {
+    width: 26px;
+  }
+
+  .profile-wrapper .games-statistics .info ul.medal-list li.medal-bronze span:before {
+    width: 25px;
+  }
+
+  .profile-wrapper .games-statistics .info ul.medal-list li span:before {
+    height: 42px;
+  }
+
+  .profile-wrapper .games-statistics .info ul.medal-list li {
+    font-size: 14px;
+    text-align: center;
+    margin: 0 12px;
+  }
+
+  .profile-wrapper .games-statistics .owl-dots button {
+    width: 18px;
+    height: 18px;
+    margin: 0 4px;
+  }
+
+  .profile-wrapper .games-statistics .owl-dots button.active {
+    width: 28px;
+    height: 28px;
+  }
+}
