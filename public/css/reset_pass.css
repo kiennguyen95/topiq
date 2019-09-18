@@ -1,133 +1,108 @@
-@media all and (max-width: 1023px){
-  .reset-pass-wrapper{
-      padding-top: 116px;
-      margin-bottom: 86px;
-      background-image: url("/img/bg-top.png");
-      background-position: center center;
-      display: flex;
-      justify-content: center;
-  }
-  
-  .reset-pass-content{
-      width: 100%;
-      height: 303px;
-      background-image: url("/img/bg-content.png");
-      background-position: center center;
-      background-size: cover;
-  }
-  
-  #reset-pass-form{
-      margin: 26px auto 0px;
-      max-width: 271px;
-  }
-  
-  #reset-pass-title{
-      text-align: center;
-      font-size: 17px;
-      font-weight: bold;
-      margin-top: 23px;
-  }
-  
-  #password{
-      margin-bottom: 20px;
-  }
-  
-  input[type=password] {
-      width: 271px;
-      height: 40px;
-      padding: 10px 15px;
-      margin: 8px 0;
-      display: inline-block;
-      border-radius: 25px;
-      color: white;
-      border: none;
-      background-color: #273055;
-  }
-    
-  input[type=submit] {
-      width: 271px;
-      height: 40px;
-      background-image: linear-gradient(to left, #00c79d, #016689);
-      color: white;
-      padding: 10px;
-      margin-top: 50px;
-      border: none;
-      border-radius: 25px;
-      cursor: pointer;
-  }
-  
-  ::placeholder {
-      color: #5b689e;
-  }
-  
-  label{
-      font-size: 14px;
-      display: block;
-  }
+.reset-pass-wrapper{
+  padding-top: 116px;
+  margin-bottom: 86px;
+  background-image: url("/img/bg-top.png");
+  background-position: center;
+  display: flex;
+  justify-content: center;
 }
 
+.reset-pass-wrapper .reset-pass-content{
+  width: 100%;
+  height: 303px;
+  background-color: #151d47;
+}
+
+.reset-pass-wrapper .reset-pass-content::before{
+  content: "";
+  display: block;
+  border-top: 2px solid;
+  border-image-source: linear-gradient(to left, #151d47, #6578c3 52%, #151d47);
+  border-image-slice: 1;
+}
+
+.reset-pass-content #reset-pass-form{
+  margin: 26px auto 0px;
+  max-width: 271px;
+}
+
+.reset-pass-content #reset-pass-title{
+  text-align: center;
+  font-size: 17px;
+  font-weight: bold;
+  margin-top: 23px;
+}
+
+.reset-pass-content #password{
+  margin-bottom: 20px;
+}
+
+.reset-pass-content input[type=password] {
+  width: 271px;
+  height: 40px;
+  padding: 10px 15px;
+  margin: 8px 0;
+  display: inline-block;
+  border-radius: 25px;
+  color: white;
+  border: none;
+  background-color: #273055;
+}
+
+.reset-pass-content input[type=submit] {
+  width: 271px;
+  height: 40px;
+  background-image: linear-gradient(to left, #00c79d, #016689);
+  color: white;
+  padding: 10px;
+  margin-top: 50px;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+}
+
+.reset-pass-content ::placeholder {
+  color: #5b689e;
+}
+
+.reset-pass-content label{
+  font-size: 14px;
+  display: block;
+}
+
+
 @media all and (min-width: 1024px) {
-    .reset-pass-wrapper{
-        padding-top: 232px;
-        background-image: url("/img/bg-top.png");
-        background-position: center center;
-        display: flex;
-        justify-content: center;
-    }
+  .reset-pass-wrapper{
+    padding-top: 232px;
+    margin-bottom: 0px;
+  }
+  
+  .reset-pass-wrapper .reset-pass-content{
+    width: 1258px;
+    height: 501px;
+    background-image: url("/img/bg-content.png");
+    background-position: center;
+    background-color: transparent;
+  }
+
+  .reset-pass-wrapper .reset-pass-content::before{
+    display: none;
+  }
+  
+  .reset-pass-content #reset-pass-form{
+    max-width: 340px;
+  }
+  
+  .reset-pass-content #reset-pass-title{
+    font-size: 26px;
+    margin-top: 36px;
+  }
+  
+  .reset-pass-content input[type=password] {
+    width: 340px;
+  }
     
-    .reset-pass-content{
-        width: 1258px;
-        height: 501px;
-        background-image: url("/img/bg-content.png");
-        background-position: center center;
-    }
-    
-    #reset-pass-form{
-        margin: 26px auto 0px;
-        max-width: 340px;
-    }
-    
-    #reset-pass-title{
-        text-align: center;
-        font-size: 26px;
-        font-weight: bold;
-        margin-top: 36px;
-    }
-    
-    #password{
-        margin-bottom: 20px;
-    }
-    
-    input[type=password] {
-        width: 340px;
-        height: 40px;
-        padding: 10px 15px;
-        margin: 8px 0;
-        display: inline-block;
-        border-radius: 25px;
-        color: white;
-        border: none;
-        background-color: #273055;
-    }
-      
-    input[type=submit] {
-        width: 340px;
-        height: 40px;
-        background-image: linear-gradient(to left, #00c79d, #016689);
-        color: white;
-        padding: 10px;
-        margin-top: 50px;
-        border: none;
-        border-radius: 25px;
-        cursor: pointer;
-    }
-    
-    ::placeholder {
-        color: #5b689e;
-    }
-    
-    label{
-        font-size: 14px;
-        display: block;
-    }
+  .reset-pass-content input[type=submit] {
+    width: 340px;
+  }
 }
