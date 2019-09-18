@@ -70,6 +70,13 @@
   display: block;
 }
 
+.reset-pass-content #message-error{
+  font-size: 14px;
+  display: none;
+  color: #FF0000;
+  margin-top: 8px;
+}
+
 
 @media all and (min-width: 1024px) {
   .reset-pass-wrapper{
