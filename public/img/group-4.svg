@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="106" height="95" viewBox="0 0 106 95">
+    <defs>
+        <linearGradient id="a" x1="19.387%" x2="139.943%" y1="19.176%" y2="113.068%">
+            <stop offset="0%" stop-color="#00C79D"/>
+            <stop offset="100%" stop-color="#016689"/>
+        </linearGradient>
+        <path id="c" d="M73.142 0c-6.267 0-11.934 3.747-14.415 9.533a15.84 15.84 0 0 0 4.997 18.872c.046.029.09.062.13.098a15.478 15.478 0 0 0 9.288 3.051c8.668 0 15.696-7.064 15.696-15.777S81.81 0 73.142 0zm8.253 12.165l-10.69 8.741a.968.968 0 0 1-1.352-.123l-4.59-5.404a.981.981 0 0 1 .108-1.377.969.969 0 0 1 1.37.108l3.974 4.678 9.953-8.14a.969.969 0 0 1 1.368.14.98.98 0 0 1-.141 1.376v.001z"/>
+        <filter id="b" width="230.6%" height="229.9%" x="-62.1%" y="-49.1%" filterUnits="objectBoundingBox">
+            <feOffset dx="1" dy="5" in="SourceAlpha" result="shadowOffsetOuter1"/>
+            <feGaussianBlur in="shadowOffsetOuter1" result="shadowBlurOuter1" stdDeviation="6"/>
+            <feColorMatrix in="shadowBlurOuter1" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.361384737 0"/>
+        </filter>
+    </defs>
+    <g fill="none" fill-rule="evenodd">
+        <g transform="translate(5 11.882)">
+            <ellipse cx="38.836" cy="39.059" fill="url(#a)" stroke="#FFF" stroke-opacity=".095" stroke-width="4.05" rx="40.861" ry="41.084"/>
+            <g fill="#FFF" fill-rule="nonzero">
+                <path d="M38.642 40.375c4.121 0 7.476-3.398 7.476-7.575 0-4.178-3.355-7.575-7.476-7.575-4.124 0-7.476 3.397-7.476 7.575 0 4.177 3.352 7.575 7.476 7.575z" opacity=".598"/>
+                <path d="M49.889 46.159c-.958-1.296-2.27-2.324-3.9-3.057-1.989-.897-4.462-1.35-7.347-1.35-2.886 0-5.359.453-7.349 1.35-1.629.732-2.941 1.76-3.898 3.056-1.648 2.223-1.666 4.45-1.666 4.545 0 1.138.914 2.066 2.039 2.066h21.748c1.124 0 2.04-.928 2.04-2.066 0-.095-.021-2.322-1.667-4.544z"/>
+            </g>
+        </g>
+        <g transform="translate(5 7)">
+            <use fill="#000" filter="url(#b)" xlink:href="#c"/>
+            <use fill="#16EEA3" xlink:href="#c"/>
+        </g>
+    </g>
+</svg>

@@ -96,4 +96,9 @@ class PageController extends Controller
   {
     return view('pages.reset_password');
   }
+
+  public function verifyEmail()
+  {
+    return view('pages.verify_email');
+  }
 }
