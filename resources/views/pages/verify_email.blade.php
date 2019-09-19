@@ -7,7 +7,7 @@
 @section('content')
 <div class="verify-wrapper">
   <div class="verify-content">
-    <img id="verify-img" src="./img/group-4.svg" alt="group-4">
+    <img id="verify-img" src="./img/icon-verify-email.svg" alt="icon-verify-email">
     <p id="verify-msg">Tài khoản của bạn đã được xác thực trước đó</p>
   </div>
 </div>
