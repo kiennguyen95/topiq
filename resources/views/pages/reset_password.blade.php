@@ -14,7 +14,7 @@
 
             <label for="confirm-password">Nhập lại mật khẩu</label>
             <input type="password" id="confirm-password" name="confirm-password" placeholder="Nhập mật khẩu">
-            <p id="message-error">Sai Cmnr</p>
+            <p id="message-error"></p>
             <br>
             <input type="submit" value="Xong">
         </form>

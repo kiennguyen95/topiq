@@ -101,4 +101,9 @@ class PageController extends Controller
   {
     return view('pages.verify_email');
   }
+
+  public function topUp()
+  {
+    return view('pages.top_up');
+  }
 }
