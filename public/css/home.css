@@ -1,8 +1,12 @@
 .home-wrapper .home-banner {
     padding-top: 11em;
     background-image: url(/img/banner_sp@3x.png);
+    background-position-y: 100px;
     background-size: cover;
     height: 500px;
+    border-bottom: 2px solid;
+    border-image-source: linear-gradient(to left, #151d47, #6578c3 52%, #151d47);
+    border-image-slice: 1;
 }
 
 .home-wrapper .home-page-games .home-game-icon img {
@@ -17,20 +21,31 @@
     line-height: 20px;
 }
 
+.home-wrapper .home-page-games .game-item {
+    margin-top: 100px;
+}
+
 .home-wrapper .home-page-games .game-item .home-game-name {
     font-size: 26px;
     margin-bottom: 25px;
     color: #16eea3;
+    position: absolute;
+    top: 25px;
+    left: calc(50% - 160px);
+    width: 320px;
+    text-align: center;
 }
 
 .home-wrapper .home-page-games .game-item .home-game-description {
     font-size: 13px;
     color: #ffffff;
+    margin: 60px 0 20px;
+    padding: 0 30px;
 }
 
 .home-wrapper .home-page-games .owl-nav button {
     position: absolute;
-    top: 54.5%;
+    top: 350px;
     width: 30px;
     height: 44px;
 }
@@ -40,12 +55,12 @@
 }
 
 .home-wrapper .home-page-games .owl-nav button.owl-prev {
-    left: 60px;
+    left: 20px;
     background-image: url(/img/btn-prev.svg);
 }
 
 .home-wrapper .home-page-games .owl-nav button.owl-next {
-    right: 60px;
+    right: 20px;
     background-image: url(/img/btn-next.svg);
 }
 
@@ -88,10 +103,26 @@
 
     .home-wrapper .home-banner {
         background-image: url(/img/banner.png);
-        background-position: center 60px;
+        border: none;
+        background-position: center center;
         width: 100%;
         padding-top: 134px;
         height: 590px;
+    }
+
+    .home-wrapper .home-page-games .owl-nav button {
+        position: absolute;
+        top: 54.5%;
+        width: 30px;
+        height: 44px;
+    }
+
+    .home-wrapper .home-page-games .owl-nav button.owl-prev {
+        left: 60px;
+    }
+
+    .home-wrapper .home-page-games .owl-nav button.owl-next {
+        right: 60px;
     }
 
     .home-wrapper .home-page-games .game-item .home-game-icon {
@@ -104,5 +135,18 @@
         width: 50%;
         margin-top: 115px;
         padding: 0 20px 0 60px;
+    }
+
+    .home-wrapper .home-page-games .game-item .home-game-name {
+        position: initial;
+    }
+
+    .home-wrapper .home-page-games .game-item {
+        margin: 0;
+    }
+
+    .home-wrapper .home-page-games .game-item .home-game-description {
+        margin: 0;
+        padding: 0;
     }
 }
