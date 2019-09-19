@@ -7,10 +7,7 @@
 @endsection
 @section('content')
   <div class="home-wrapper">
-    <div class="home-banner">
-{{--      <img src="/img/banner.png" srcset="/img/banner@2x.png 2x, /img/banner@3x.png 3x" class="banner-img">--}}
-    </div>
-
+    <div class="home-banner"></div>
     <div class="home-page-games owl-carousel owl-theme">
       @foreach ($games as $game)
         <div class="game-item">
@@ -26,7 +23,6 @@
         </div>
       @endforeach
     </div>
-
   </div>
 @endsection
 @section('script')

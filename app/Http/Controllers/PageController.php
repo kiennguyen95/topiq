@@ -2,10 +2,31 @@
 
 namespace App\Http\Controllers;
 
+use App\Exceptions\DatabaseException;
+use App\Services\DataService;
 use Illuminate\Http\Request;
+use GuzzleHttp\Client;
+use Illuminate\Support\Facades\Validator;
 
 class PageController extends Controller
 {
+  /**
+   * The data service implementation.
+   *
+   * @var DataService
+   */
+  protected $service;
+
+  /**
+   * Create a new controller instance.
+   *
+   * @param  DataService  $users
+   * @return void
+   */
+  public function __construct(DataService $service)
+  {
+    $this->service = $service;
+  }
 
   public function home()
   {
@@ -38,68 +59,116 @@ class PageController extends Controller
     return view('pages.home')->with('games', $games);
   }
 
-  public function profile()
+  public function profile($uid)
   {
-    $user = [
-      'avatar_src' => 'abc',
-      'name' => 'oOoProVipOoo',
-      'balance' => '10.000.000',
-      'games' => [
-        [
-          'name' => 'TOPIQ',
-          'icon_src' => '/img/game.png',
-          'icon_alt' => 'topiq',
-          'rank' => '1',
-          'elo' => '1234',
-          'won' => '123',
-          'lost' => '12',
-          'draw' => '1',
-          'medal_gold' => '12',
-          'medal_silver' => '8',
-          'medal_bronze' => '4',
-        ],
-        [
-          'name' => 'CỜ CARO',
-          'icon_src' => '/img/game.png',
-          'icon_alt' => 'ca-ro',
-          'rank' => '2',
-          'elo' => '43345',
-          'won' => '53',
-          'lost' => '122',
-          'draw' => '11',
-          'medal_gold' => '122',
-          'medal_silver' => '8',
-          'medal_bronze' => '4',
-        ],
-        [
-          'name' => 'ĐA SỐ THIỂU SỐ',
-          'icon_src' => '/img/game.png',
-          'icon_alt' => 'da-so-thieu-so',
-          'rank' => '3',
-          'elo' => '6236',
-          'won' => '4',
-          'lost' => '4',
-          'draw' => '0',
-          'medal_gold' => '17',
-          'medal_silver' => '55',
-          'medal_bronze' => '47',
-        ],
-      ]
+    $client = new Client();
+    $headers = [
+      'Iat' => '1547697761113',
+      'Checksum' => '55644f801e1a9e4021a27c23e685eea1f1192fc832f62a5e014b5ce5d0396600',
+      'User-Agent' => 'TTTP_dev',
+      'Uuid' => '36aa4e3c7f9eeb5d',
+      'Version' => '1.6.0',
     ];
+    $query = [
+      'player_id' => $uid,
+    ];
+    $options = [
+      'headers' => $headers,
+      'query' => $query,
+    ];
+    $response = $client->request('GET', 'http://truytimtrieuphu.com/apiv9/users/get-profile', $options);
+    $result = json_decode($response->getBody()->getContents(), TRUE);
 
-    $user = json_decode(json_encode($user));
-//    dump($user); die;
+    if (!$result['status']) {
+      return abort(404);
+    }
+
+    $data = $result['data'];
+    $user = [
+      'avatar_src' => $data['playerInfor']['avatar'],
+      'name' => $data['playerInfor']['nickname'],
+      'balance' => '10.000.000',
+    ];
+    $games = [];
+    foreach ($data['gameStatistics'] as $game_data) {
+      $games[] = [
+        'name' => $game_data['gameName'],
+        'icon_src' => '/img/game.png',
+        'icon_alt' => $game_data['gameName'],
+        'rank' => $game_data['rank'],
+        'elo' => $game_data['points'],
+        'won' => isset($game_data['totalMatchesWon']) ? $game_data['totalMatchesWon'] : NULL,
+        'lost' => isset($game_data['totalMatchesLost']) ? $game_data['totalMatchesLost'] : NULL,
+        'draw' => isset($game_data['totalMatchesDraw']) ? $game_data['totalMatchesDraw'] : NULL,
+        'medal_gold' => isset($game_data['goldmedals']) ? $game_data['goldmedals'] : 0,
+        'medal_silver' => isset($game_data['silvermedals']) ? $game_data['silvermedals'] : 0,
+        'medal_bronze' => isset($game_data['bronzemedals']) ? $game_data['bronzemedals'] : 0,
+        ];
+    }
+    $user['games'] = $games;
+
     return view('pages.profile')->with('user', $user);
   }
 
-  public function resetPassword()
+  public function resetPassword($token)
   {
-    return view('pages.reset_password');
+    try {
+      $verified = $this->service->verifyToken($token);
+    } catch (DatabaseException $exception) {
+      throw $exception;
+    }
+    if (!$verified)
+    {
+      return view('pages.notice')->with('message', config('message.system.page_not_found'));
+    }
+    return view('pages.reset_password')->with('token', $token);
   }
 
-  public function verifyEmail()
+  public function changePassword(Request $request, $token)
   {
-    return view('pages.verify_email');
+    try {
+      $verified = $this->service->verifyToken($token);
+      if (!$verified)
+      {
+        return view('pages.notice')->with('message', config('message.system.page_not_found'));
+      }
+      $request->get('password');
+      $validator = Validator::make($request->all(), [
+        'password' => 'required|min:3',
+        'confirm_password' => 'required|same:password',
+      ]);
+
+      if ($validator->fails()) {
+        return view('pages.notice')->with('message', config('message.system.invalid_data'));
+      }
+      $this->service->updatePassword($token, $request->get('password'));
+    }
+    catch (DatabaseException $exception) {
+      throw $exception;
+    }
+    return view('pages.notice')->with('message', config('message.change_password.success'));
+  }
+
+  public function verifyEmail($id, $token)
+  {
+    try {
+      $state = $this->service->verifyEmail($id, $token);
+    } catch (DatabaseException $exception) {
+      throw $exception;
+    }
+
+    switch ($state) {
+      case -1:
+        $message = config('message.system.page_not_found');
+        break;
+      case 0:
+        $message = config('message.verify_email.success');
+        break;
+      case 1:
+        $message = config('message.verify_email.already_verified');
+        break;
+    }
+    return view('pages.notice')->with('message', $message);
   }
 
   public function topUp()
