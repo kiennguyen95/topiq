@@ -14,9 +14,14 @@
 
             <label for="confirm-password">Nhập lại mật khẩu</label>
             <input type="password" id="confirm-password" name="confirm-password" placeholder="Nhập mật khẩu">
+            <p id="message-error">Sai Cmnr</p>
             <br>
             <input type="submit" value="Xong">
         </form>
     </div>
 </div>
+@endsection
+@section('script')
+  @parent
+  <script src="/js/reset_password.js"></script>
 @endsection
