@@ -38,10 +38,17 @@ class CommonService {
 
   public function verifyEmail($id, $token) {
     $player = DB::table('players')
-      ->where('id', $id)
-      ->where('token', $token)
+      ->where([
+        'id' => $id,
+        'token' => $token,
+      ])
       ->first();
-    if (empty($player)) return NULL;
+    if (empty($player)) {
+      return -1;
+    }
+    if (!$player->verified) {
+//      DB::table('players')->where('token', $token)->update(['verified' => 1]);
+    }
     return $player->verified;
   }
 

@@ -104,7 +104,20 @@ class PageController extends Controller
   public function verifyEmail($id, $token)
   {
     $service = new CommonService();
-    $verified = $service->verifyEmail($id, $token);
-    return view('pages.verify_email');
+    $state = $service->verifyEmail($id, $token);
+    dump($state);
+    switch ($state) {
+      case NULL:
+        $message = \Config::get('message.verify_email.failed');
+        break;
+      case 0:
+        $message = \Config::get('message.verify_email.success');
+        break;
+      case 1:
+        $message = \Config::get('message.verify_email.already_verified');
+        break;
+    }
+    dump($message); die;
+    return view('pages.verify_email')->with('message', $message);
   }
 }
