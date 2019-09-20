@@ -18,6 +18,14 @@
   background-size: cover;
   width: 11rem;
   height: 11rem;
+  text-align: center;
+  padding-top: 13px;
+  padding-left: 1px;
+}
+
+.profile-wrapper .user-info .avatar img {
+  width: 93px;
+  clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
 }
 
 .profile-wrapper .user-info .name {
@@ -193,6 +201,12 @@
   .profile-wrapper .user-info .avatar {
     width: 155px;
     height: 155px;
+    padding-top: 18px;
+    padding-left: 2px;
+  }
+
+  .profile-wrapper .user-info .avatar img {
+    width: 132px;
   }
 
   .profile-wrapper .user-info .name {
