@@ -90,11 +90,28 @@
   border: 1.5px solid #00c79d;
 }
 
+.top-up-info select {
+  -moz-appearance: none;
+  -webkit-appearance:none;
+  appearance: none;
+}
+.top-up-info select::-ms-expand {
+    display: none;
+}
+
 .top-up-info label{
   font-size: 14px;
   font-weight: 600;
   display: block;
   margin-top: 25px;
+}
+
+.top-up-info #top-up-err-msg{
+  font-size: 14px;
+  font-weight: 600;
+  display: none;
+  margin-top: 14px;
+  color: #ff0000;
 }
 
 .top-up-info ::placeholder {
