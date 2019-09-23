@@ -53,7 +53,8 @@
           <label for="card-pin">Mã thẻ (PIN)</label>
           <input type="text" id="card-pin" name="card-pin" placeholder="Nhập mã thẻ">
 
-          <br>
+          <p id="top-up-err-msg"></p>
+          
           <input type="submit" value="Xong">
 
           <p id="top-up-history"><a href="#">Lịch sử nạp thẻ</a></p>
@@ -65,4 +66,8 @@
   </div>
 
 </div>
+@endsection
+@section('script')
+  @parent
+  <script src="/js/top_up.js"></script>
 @endsection
