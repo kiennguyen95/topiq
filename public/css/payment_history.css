@@ -1,0 +1,146 @@
+.payment-history-wrapper{
+  padding-top: 116px;
+  margin-bottom: 61px;
+  background-image: url("/img/bg-top.png");
+  background-position: center;
+  display: flex;
+  justify-content: center;
+}
+
+.payment-history-wrapper .payment-history-content{
+  width: 100%;
+  height: 100%;
+  background-color: #151d47;
+}
+
+.payment-history-wrapper .payment-history-content::before{
+  content: "";
+  display: block;
+  border-top: 2px solid;
+  border-image-source: linear-gradient(to left, #151d47, #6578c3 52%, #151d47);
+  border-image-slice: 1;
+}
+
+.payment-history-content #payment-history-title{
+  font-size: 21px;
+  font-weight: bold;
+  text-align: center;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+.payment-history-main .payment-history-details{
+  background-color: rgba(216,216,216,0.08);
+  max-width: 240px;
+  height: 182px;
+  padding: 21px 56px 28px 49px;
+  margin: 0 auto 20px;
+}
+
+.payment-history-details ul li{
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.86;
+}
+
+.payment-history-details p.payment-history-date{
+  display: list-item;
+  list-style-type: disc;
+  list-style-position: inside;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.payment-history-details .payment-history-card{
+  margin: 8px 0 8px;
+}
+
+.payment-history-details p.payment-history-status-success{
+  color: #16eda3;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.payment-history-details p.payment-history-status-fail{
+  color: #ff4444;;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.payment-history-content #payment-history-more{
+  display: block;
+  width: 271px;
+  height: 40px;
+  background-image: linear-gradient(to left, #00c79d, #016689);
+  color: white;
+  padding: 10px;
+  margin: 50px auto 0;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+}
+
+@media all and (min-width: 1024px) {
+  .payment-history-wrapper{
+    padding-top: 232px;
+    margin-bottom: 0px;
+  }
+
+  .payment-history-wrapper .payment-history-content{
+    width: 1258px;
+    height: 501px;
+    background-image: url("/img/bg-content.png");
+    background-position: center;
+    background-color: transparent;
+  }
+  
+  .payment-history-wrapper .payment-history-content::before{
+    display: none;
+  }
+
+  .payment-history-content #payment-history-title{
+    font-size: 26px;
+    margin-top: 35px;
+    margin-bottom: 35px;
+  }
+
+  .payment-history-content .payment-history-main{
+    overflow-x: hidden;
+    overflow-y: scroll;
+    height: 75%;
+    width: 90%;
+    margin: 0 auto;
+  }
+
+  .payment-history-main .payment-history-details{
+    max-width: none;
+    width: 30%;
+    padding: 21px 30px 28px 49px;
+    margin: 10px;
+    float: left;
+  }
+
+  .payment-history-content #payment-history-more{
+    display: none;
+  }
+
+  ::-webkit-scrollbar {
+    width: 5px;
+  }
+
+  ::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 3px #808080; 
+    border-radius: 10px;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background: #FFFFFF; 
+    border-radius: 10px;
+  }
+}
+
+@media all and (min-width: 1200px) {
+  .payment-history-main .payment-history-details{
+    width: 23%;
+  }
+}

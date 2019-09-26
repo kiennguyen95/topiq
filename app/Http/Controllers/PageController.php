@@ -175,4 +175,9 @@ class PageController extends Controller
   {
     return view('pages.top_up');
   }
+
+  public function paymentHistory()
+  {
+    return view('pages.payment_history');
+  }
 }
